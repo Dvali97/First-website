@@ -1,0 +1,27 @@
+.items {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    transition: 1s;
+}
+
+.item a {
+    text-decoration: none;
+    color: gold;
+    padding: 20px;
+    font-weight: bold;
+    transition: 1s;
+}
+
+.item a:hover {
+    background-color: rgb(172, 61, 33);
+    transition: 1s;
+    border-radius: 20px;
+    transform: ease;
+}
+
+.items:hover{
+    padding: 25px;
+    transform: rotate(360deg);
+    transition: 1s;
+}

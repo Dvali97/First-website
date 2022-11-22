@@ -1,0 +1,14 @@
+form {
+    padding: 16.5px;
+}
+
+.button {
+    color: black;
+    background-color: gold;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.SearchInput {
+    padding: 4px;
+}

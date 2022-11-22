@@ -1,0 +1,17 @@
+.footer {
+    width: auto;
+    background-color: rgba(26, 26, 26);
+    color: white;
+    margin-top: 25px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+}
+
+.rights {
+    font-size: 12px;
+}
