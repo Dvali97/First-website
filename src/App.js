@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import s from "./App.module.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Films from "./components/Films/Films";
 import Multfilms from "./components/Multfilms/Multfilms";
 import Serials from "./components/Serials/Serials";
@@ -11,9 +11,9 @@ import RegistrationForm from "./components/Registration/RegistrationForm/Registr
 import Footer from "./components/Footer/Footer";
 import Slideshow from "./components/Slideshow/Slideshow";
 
-function App(props) {
+const App = (props) => {
+  
   return (
-    <BrowserRouter>
       <div className={s.all}>
         <Header />
         <Slideshow />
@@ -32,8 +32,10 @@ function App(props) {
             path="/multfilms"
             element={
               <Multfilms
-                addPost={props.addPost}
-                mult={props.state.multfilms.multfilm}
+                multfilms={props.state.multfilms}
+                // newName={props.state.multfilms.newName}
+                updateName={props.updateName}
+                addName={props.addName}
               />
             }
           />
@@ -44,7 +46,6 @@ function App(props) {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
   );
 }
 

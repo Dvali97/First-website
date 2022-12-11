@@ -1,6 +1,3 @@
-import { rerenderEntireTree } from './../render';
-
-
 let state = {
   filmsPage: {
     posts: [
@@ -121,26 +118,32 @@ let state = {
   multfilms: {
     multfilm: [
       {
-        age: "25",
         name: "Dito",
-        surname: "Dvali",
-        city: "Tbilisi",
       },
     ],
+    newName: "ტექსტი",
   },
 };
 
-export let addPost = (urL, alT, titlE, genrE) => {
+const callSubscriber = () => { }
 
-  let newPost = {
-    url: urL,
-    alt: alT,
-    title: titlE,
-    genre: genrE,
+export const subscribe = (observer) => {
+  callSubscriber(observer);
+}
+
+
+export let addName = () => {
+  let newName = {
+    name: state.multfilms.newName,
   }
+  state.multfilms.multfilm.push(newName);
+  state.multfilms.newName = "";
+  callSubscriber(state);
+}
 
-  state.filmsPage.posts.push(newPost);
-  rerenderEntireTree(state);
+export let updateName = (name) => {
+  state.multfilms.newName = name;
+  callSubscriber(state);
 }
 
 
